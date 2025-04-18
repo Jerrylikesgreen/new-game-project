@@ -11,7 +11,7 @@ func _input(event):
 	if _is_active == true and event.is_action_pressed(&"CLICK"):
 		target_position = get_global_mouse_position()
 		_is_moving = true
-		print("click")
+		print("CLICK")
 
 func _physics_process(delta):
 	if _is_moving == true:
@@ -24,7 +24,7 @@ func _physics_process(delta):
 
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event.is_action_pressed(&"CLICK"):
+	if event.is_action_pressed(&"SELECT"):
 		if _is_active == false:
 			_is_active = true
 			toogle_show_is_active(Color(0.87, 0.18, 0.604))

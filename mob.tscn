@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgl6ef8hjmdja"]
+
+[ext_resource type="Texture2D" uid="uid://dhets1ikohyit" path="res://icon.svg" id="1_dy6sc"]
+[ext_resource type="Script" uid="uid://dqd7fexlcsjpj" path="res://mob.gd" id="1_nokgg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nokgg"]
+radius = 21.2132
+
+[node name="Mob" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_nokgg")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(1.5, 1)
+scale = Vector2(0.382813, 0.359375)
+texture = ExtResource("1_dy6sc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nokgg")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

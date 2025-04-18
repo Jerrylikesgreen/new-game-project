@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8ffeyoeyypui"]
+
+[ext_resource type="PackedScene" uid="uid://kaly5vs1tn5d" path="res://player_orb.tscn" id="1_37kl0"]
+[ext_resource type="PackedScene" uid="uid://cgl6ef8hjmdja" path="res://mob.tscn" id="2_8uh7m"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_37kl0")]
+physics_interpolation_mode = 1
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2(2, 2)
+process_callback = 0
+
+[node name="Mob" parent="." instance=ExtResource("2_8uh7m")]
+position = Vector2(410, 220)
+
+[node name="Mob2" parent="." instance=ExtResource("2_8uh7m")]
+position = Vector2(189, -60)
